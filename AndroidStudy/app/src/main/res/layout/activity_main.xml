@@ -1,19 +1,532 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#E9E4E4"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:src="@drawable/tk_logo"
+            android:contentDescription="TK Logo"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:cursorVisible="true"
+            android:gravity="right"
+            android:text="Solar Power Generation"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:letterSpacing="-0.05"
+            tools:ignore="HardcodedText,TextViewEdits" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        tools:ignore="UselessLeaf" />
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="#454647" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:padding="13dp"
+            android:text="Solar power generation information"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="POWER PRODUCTION : 5,263kW"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Comprehensive\ninformation"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:columnCount="4"
+                android:rowCount="4">
+
+                <!-- CURRENT ENERGY -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="CURRENT\nENERGY"
+                    android:textColor="#ffffff"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <!-- TODAY'S ENERGY -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="kW"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="TODAY'S\nENERGY"
+                    android:textColor="#ffffff"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <!-- LIFETIME ENERGY -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="kWh"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="LIFETIME\nENERGY"
+                    android:textColor="#ffffff"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="MWh"
+                    android:textColor="#ffffff"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+                <!-- CO₂ REDUCTION -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text="CO₂\nREDUCTION"
+                    android:textColor="#ffffff"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="tCO₂eq/\nMWh"
+                    android:textColor="#ffffff"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+            </GridLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_corner_sky"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="4dp"
+                android:orientation="vertical"
+                android:gravity="center|bottom"
+                android:layout_gravity="center_vertical"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Individual\ninformation"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="(Today)"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:columnCount="4"
+                android:rowCount="4">
+
+                <!-- CURRENT ENERGY -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:text="No.1"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <!-- TODAY'S ENERGY -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="kWh"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:text="No.2"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <!-- LIFETIME ENERGY -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="kWh"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:text="No.3"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="2"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="kWh"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+
+                <!-- CO₂ REDUCTION -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="0"
+                    android:layout_columnWeight="15"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:text="No.4"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="1"
+                    android:layout_columnWeight="20"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/rounded_corner_white"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="3"
+                    android:layout_column="2"
+                    android:layout_columnWeight="5"
+                    android:layout_gravity="start|bottom"
+                    android:layout_margin="5dp"
+                    android:gravity="start|center_vertical"
+                    android:text="kWh"
+                    android:textColor="#000000"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlHardcoded,SmallSp" />
+            </GridLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/grandsun"
+            android:contentDescription="TK Logo"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            tools:ignore="HardcodedText,InefficientWeight" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
