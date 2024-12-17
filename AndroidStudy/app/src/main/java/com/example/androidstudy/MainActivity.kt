@@ -2,12 +2,24 @@ package com.example.androidstudy
 
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 액션바 숨기기
+        supportActionBar?.hide()
+
+        // 상태바와 내비게이션 바 모두 숨기기
+        window.decorView.systemUiVisibility = (
+                View.SYSTEM_UI_FLAG_FULLSCREEN or  // 상태바 숨기기
+                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or  // 내비게이션 바 숨기기
+                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY  // 화면을 터치해도 다시 나타나지 않도록
+                )
+
         setContentView(R.layout.activity_main)
 
         // VideoView 초기화
